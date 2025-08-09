@@ -1,0 +1,30 @@
+*{box-sizing:border-box}
+html,body{margin:0;height:100%;font-family:system-ui,-apple-system,Segoe UI,Roboto,Arial;background:#0b1220;color:#eaf0ff}
+.topbar{display:flex;justify-content:space-between;align-items:center;padding:10px 16px;background:#0f1b33;border-bottom:1px solid #233054;position:sticky;top:0}
+.brand{font-weight:700}
+.room{display:flex;gap:8px;align-items:center}
+.layout{display:grid;grid-template-columns:2fr 1fr;gap:12px;padding:12px}
+.left{min-height:0}
+#game{width:100%;height:70vh;background:#0a0f1d;border:1px solid #223056;border-radius:12px}
+.hud{display:flex;gap:12px;margin-top:8px;font-size:14px;opacity:.9}
+.shop{margin-top:8px;padding:8px;background:#0f1b33;border:1px solid #223056;border-radius:12px}
+.shop.hidden{display:none}
+.right .card{background:#0f1b33;border:1px solid #223056;border-radius:12px;padding:12px}
+.row{display:flex;gap:8px;align-items:center;margin:8px 0}
+.row.space{justify-content:space-between}
+.row label{width:80px;opacity:.8}
+.row input{flex:1;padding:8px 10px;border-radius:10px;border:1px solid #2a3a63;background:#0b1427;color:#eaf0ff}
+.btn{background:#3b82f6;color:#fff;border:none;padding:8px 12px;border-radius:10px;cursor:pointer}
+.btn.ghost{background:transparent;border:1px solid #3b82f6}
+.btn.small{padding:6px 10px;font-size:12px}
+.players{display:flex;flex-wrap:wrap;gap:6px;list-style:none;padding:0;margin:0}
+.players li{background:#0b1427;border:1px solid #223056;border-radius:10px;padding:6px 10px}
+.players li.me{outline:1px dashed #3b82f6}
+.divider{height:1px;background:#223056;margin:10px 0}
+.chatlog{height:260px;border:1px solid #223056;border-radius:10px;padding:8px;background:#0b1427;overflow:auto}
+.chatline{margin:4px 0}
+.chatline .from{font-weight:700;margin-right:6px}
+.chatline.system{opacity:.75;font-style:italic}
+.chatinput{display:flex;gap:8px;margin-top:8px}
+.hint{opacity:.8;font-size:12px}
+@media (max-width: 900px){.layout{grid-template-columns:1fr}#game{height:52vh}}

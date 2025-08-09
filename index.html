@@ -1,0 +1,73 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Door Survival</title>
+  <link rel="stylesheet" href="style.css" />
+  <script src="https://cdn.socket.io/4.7.5/socket.io.min.js"></script>
+</head>
+<body>
+  <div class="topbar">
+    <div class="brand">🚪 Door Survival</div>
+    <div class="room">
+      <span id="roomLabel"></span>
+      <button id="copyBtn" class="btn small">Copy Invite</button>
+    </div>
+  </div>
+
+  <main class="layout">
+    <section class="left">
+      <canvas id="game" width="1200" height="700"></canvas>
+      <div class="hud">
+        <div>Phase: <span id="phase">lobby</span></div>
+        <div>Wave: <span id="wave">0</span></div>
+        <div>Coins: <span id="coins">0</span></div>
+        <div>Lives: <span id="lives">0</span></div>
+        <div>Speed: <span id="speed">1x</span></div>
+      </div>
+      <div id="shop" class="shop hidden">
+        <h3>Shop (20s)</h3>
+        <button data-item="life" class="btn">❤️ Extra Life (50)</button>
+        <button data-item="speed" class="btn">⚡ Speed +0.25 (30)</button>
+        <button data-item="outfit" class="btn">👑 King Outfit (20)</button>
+        <div id="shopTimer"></div>
+      </div>
+    </section>
+
+    <section class="right">
+      <div id="lobby" class="card">
+        <h2>Join / Create</h2>
+        <div class="row">
+          <label>Name</label><input id="nameInput" maxlength="16" placeholder="Player" />
+        </div>
+        <div class="row">
+          <label>Room</label><input id="roomInput" maxlength="6" placeholder="ABCD" />
+          <button id="joinBtn" class="btn">Join</button>
+          <button id="createBtn" class="btn ghost">Create</button>
+        </div>
+        <p class="hint">Share the invite link so family can join on phone/tablet/PC.</p>
+      </div>
+
+      <div id="panel" class="card hidden">
+        <div class="row space">
+          <h2>Players</h2>
+          <button id="startBtn" class="btn">Start Game</button>
+        </div>
+        <ul id="players" class="players"></ul>
+        <div class="divider"></div>
+        <div class="chat">
+          <div id="chatLog" class="chatlog"></div>
+          <div class="chatinput">
+            <input id="chatInput" maxlength="140" placeholder="Chat here…" />
+            <button id="sendBtn" class="btn small">Send</button>
+          </div>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <script src="config.js"></script>
+  <script src="app.js"></script>
+</body>
+</html>
